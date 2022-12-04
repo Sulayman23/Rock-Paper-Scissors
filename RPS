@@ -1,0 +1,43 @@
+# Rock, paper, scissors game.
+
+import time
+rps = ['rock', 'paper', 'scissors']
+play_again = 'yes'
+attempts = 0
+print("Hi, welcome to my rock, paper, scissors game!\n")
+# print(computer_choice)
+while play_again == 'yes':
+    import random
+    computer_choice = random.choice(rps)
+    user_choice = input("Please enter either 'rock', 'paper' or 'scissors' and hit enter to find out if you beat the computer.\n").lower()
+    if user_choice == 'rock':
+        if computer_choice == 'scissors':
+            print("Congrats, the computer chose scissors so you win!")
+        elif computer_choice == 'rock':
+            print("You and the computer entered rock, and tied.")
+        elif computer_choice == 'paper':
+            print("Aw, the computer chose paper, so you lost. :(")
+    if user_choice == 'scissors':
+        if computer_choice == 'paper':
+            print("Congrats, the computer chose paper so you win!")
+        elif computer_choice == 'scissors':
+            print("You and the computer entered scissors, and tied.")
+        elif computer_choice == 'rock':
+            print("Aw, the computer chose rock, so you lost. :(")
+    if user_choice == 'paper':
+        if computer_choice == 'rock':
+            print("Congrats, the computer chose rock so you win!")
+        elif computer_choice == 'paper':
+            print("You and the computer entered paper, and tied.")
+        elif computer_choice == 'scissors':
+            print("Aw, the computer chose scissors, so you lost. :(")
+    time.sleep(1)
+    play_again = input("Do you want to play again? If so enter 'yes' otherwise enter anything else.\n")
+    attempts += 1
+    if play_again == 'yes':
+        time.sleep(1)
+        print("Playing again!")
+        time.sleep(1.5)
+    else:
+        print(f"Thanks for playing! You have played {attempts} many times!")
+        break
